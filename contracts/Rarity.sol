@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.7; 
 
 interface IERC721 {
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
@@ -448,6 +448,7 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
         return _allTokens[index];
     }
 
+
     /**
      * @dev Hook that is called before any token transfer. This includes minting
      * and burning.
@@ -556,7 +557,7 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
     }
 }
 
-contract Rarity is ERC721 {
+contract Rarity is ERC721  {
     uint public next_summoner;
     uint constant xp_per_day = 250e18;
     uint constant DAY = 1 days;
@@ -571,6 +572,8 @@ contract Rarity is ERC721 {
     
     event summoned(address indexed owner, uint _class, uint summoner);
     event leveled(address indexed owner, uint level, uint summoner);
+
+
 
     function adventure(uint _summoner) external {
         require(_isApprovedOrOwner(msg.sender, _summoner));

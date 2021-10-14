@@ -27,7 +27,7 @@ You can display adventurers stats using `npm run display-status`
 
 ## Schedule adventures
 
-you can schedule parties to run on predefined schedule using `nohup npm run schdule-party &`
+you can schedule parties to run on predefined schedule using `nohup npm run schedule-party &`
 
 The schedule is controlled using `CRON` config through `.env` file. By default it'll try run party
 every 30min (it'll trigger transactions only when needed)

@@ -7,7 +7,7 @@ describe("AdventureParty", function () {
     const AdventureParty = <AdventureParty__factory> await ethers.getContractFactory("AdventureParty");
     const adventureParty = await AdventureParty.deploy();
     await adventureParty.deployed();
-    await adventureParty.summonMany([1,2,3,4,5]);
+    await adventureParty.summonMany([1,2,3,4]);
     await adventureParty.adventureAll();
 
     const rarity = <Rarity>await ethers.getContractAt("Rarity", await adventureParty.rarity());
@@ -29,7 +29,7 @@ describe("AdventureParty", function () {
     const AdventureParty = <AdventureParty__factory> await ethers.getContractFactory("AdventureParty");
     const adventureParty = await AdventureParty.deploy();
     await adventureParty.deployed();
-    await adventureParty.summonMany([1,2,3,4,5]);
+    await adventureParty.summonMany([1,2,3,4]);
     await adventureParty.adventureAll();
 
     for (let i = 0; i < 3; i ++) {
@@ -49,7 +49,7 @@ describe("AdventureParty", function () {
     const AdventureParty = <AdventureParty__factory> await ethers.getContractFactory("AdventureParty");
     const adventureParty = await AdventureParty.deploy();
     await adventureParty.deployed();
-    await adventureParty.summonMany([1,2,3,4,5]);
+    await adventureParty.summonMany([1,2,3,4]);
 
     const adventureParty2 = await AdventureParty.deploy();
     await adventureParty2.deployed();
@@ -64,6 +64,7 @@ describe("AdventureParty", function () {
     const AdventureParty = <AdventureParty__factory> await ethers.getContractFactory("AdventureParty");
     const adventureParty = await AdventureParty.deploy();
     await adventureParty.deployed();
+    
     const rarity = <Rarity>await ethers.getContractAt("Rarity", await adventureParty.rarity());
     const nextSummoner = await rarity.next_summoner();
     await rarity.summon(1);

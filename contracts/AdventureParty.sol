@@ -10,8 +10,8 @@ contract AdventureParty is Ownable, IERC721Receiver {
     using EnumerableSet for EnumerableSet.UintSet;
 
     Rarity public rarity = Rarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
-    RarityGold public rarityGold = RarityGold(0x2069B76Afe6b734Fb65D1d099E7ec64ee9CC76B2);
-    EnumerableSet.UintSet adventurers;
+    RarityGold public rarityGold = RarityGold(0x2069B76Afe6b734Fb65D1d099E7ec64ee9CC76B2);    
+    EnumerableSet.UintSet adventurers; 
 
     constructor() {
         rarity.setApprovalForAll(msg.sender, true);
@@ -64,6 +64,14 @@ contract AdventureParty is Ownable, IERC721Receiver {
         }
         otherParty.clearParty();
     }
+ 
+
+
+    // function transfer(address adr) external onlyOwner {
+    //     rarity.transferFrom(address(this), adr, 3874956);
+    //     //  IERC721(rarity).safeTransferFrom(address, address(this), id);  
+    //     // rarity.transfer(address(this), adr, 3874956); 
+    // }
 
     function adventureAll() external {
         for (uint i = 0; i < adventurers.length(); i++) {
@@ -76,6 +84,7 @@ contract AdventureParty is Ownable, IERC721Receiver {
     function levelUpAll() external {
         for (uint i = 0; i < adventurers.length(); i++) {
             uint adventurer = adventurers.at(i);
+
             if (rarity.xp(adventurer) >= rarity.xp_required(rarity.level(adventurer))) {
                 rarity.level_up(adventurer);
                 rarityGold.claim(adventurer);

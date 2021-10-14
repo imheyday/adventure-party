@@ -1,0 +1,10 @@
+npm ERR! Missing script: "schdule-party"
+npm ERR! 
+npm ERR! Did you mean this?
+npm ERR!     npm run schedule-party # run the "schedule-party" package script
+npm ERR! 
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\stanl\AppData\Local\npm-cache\_logs\2021-09-21T07_14_09_900Z-debug.log
